@@ -35,3 +35,11 @@
 {"level":"info","message":"::1 - - [26/Nov/2025:20:34:55 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 115 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
 {"level":"info","message":"::1 - - [26/Nov/2025:20:37:54 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
 {"level":"info","message":"::1 - - [26/Nov/2025:20:38:26 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [26/Nov/2025:20:39:50 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [26/Nov/2025:20:41:15 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [26/Nov/2025:20:56:37 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 400 59 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"User vishwa@email.com authenticated successfully","service":"production-api"}
+{"level":"info","message":"User signed in successfully: vishwa@email.com","service":"production-api"}
+{"level":"info","message":"::1 - - [26/Nov/2025:20:57:33 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 114 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"User signed out successfully","service":"production-api"}
+{"level":"info","message":"::1 - - [26/Nov/2025:20:57:58 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
