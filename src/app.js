@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoutes from '#routes/auth.routes.js';
+import securityMiddleware from '#middleware/security.middleware.js';
 
 
 const app = express();
@@ -18,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));// Body parsing middleware
 app.use(cookieParser()); // Parse Cookie header and populate req.cookies
 
 app.use(morgan('combined', { stream: { write: (message) => logger.info(message.trim()) }})); // HTTP request logging
+
+app.use(securityMiddleware);
 
 app.get('/', (req, res) => {
   logger.info('Hello from Production-API!');
