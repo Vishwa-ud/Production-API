@@ -135,8 +135,12 @@ Production-API/
 
 ## 🔒 Security Features
 
+- **WINSTON**:
 - **Helmet**: Sets secure HTTP headers
 - **CORS**: Configurable cross-origin resource sharing
+- **MORGAN**:
+- **JWT**:
+- **ZOD**:
 - **Arcjet**: Advanced bot protection and rate limiting
 - **Cookie Parser**: Secure cookie handling
 - **Environment Variables**: Sensitive data protection
