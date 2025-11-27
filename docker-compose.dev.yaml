@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Neon Local Proxy for Development
+  neon-local:
+    image: neondatabase/neon-local:latest
+    container_name: production-api-neon-local
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env.development
+    volumes:
+    # Persist branch metadata per git branch (optional)
+      - ./.neon-local/:/tmp/.neon_local
+      - ./.git/HEAD:/tmp/.git/HEAD:ro,consistent
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "user"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # Application Service (Development)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: production-api-dev
+    env_file:
+      - .env.development
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - .logs:/app/logs
+    depends_on:
+      neon-local:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge

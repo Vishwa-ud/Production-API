@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Application Service (Production)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: production-api-prod
+    env_file:
+      - .env.production
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - .logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+networks:
+  app-network:
+    driver: bridge
