@@ -20,7 +20,7 @@ if ! docker info >/dev/null 2>&1; then
 fi
 
 # Create .neon_local directory if it doesn't exist
-makdir -p .neon_local
+mkdir -p .neon_local
 
 # add .neon_local to .gitignore if not already present
 if ! grep -q "^.neon_local/$" .gitignore 2>/dev/null; then
@@ -39,7 +39,7 @@ npm run db:migrate
 
 # Wait for the databse to be ready
 echo "Waiting for the database to be ready..."
-docker compose exec neon-local psql -U neon -d neondb -c `SELECT 1
+docker compose exec neon-local psql -U neon -d neondb -c "SELECT 1"
 
 # Start development environment
 docker compose -f docker-compose.dev.yaml up --build
