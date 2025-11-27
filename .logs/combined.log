@@ -84,3 +84,25 @@
 {"level":"info","message":"::ffff:172.18.0.1 - - [27/Nov/2025:18:46:06 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 429 102 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
 {"ip":"::1","level":"warn","message":"Rate limit exceeded.","path":"/health","service":"production-api"}
 {"level":"info","message":"::1 - - [27/Nov/2025:18:46:23 +0000] \"GET /health HTTP/1.1\" 429 102 \"-\" \"-\"","service":"production-api"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded.","path":"/health","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:46:53 +0000] \"GET /health HTTP/1.1\" 429 102 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:47:23 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:47:54 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:48:24 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:48:54 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:49:25 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:49:55 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:50:26 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:50:56 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:51:27 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:51:57 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:52:27 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:52:58 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:53:28 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:53:58 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:54:29 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:54:59 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:55:30 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:56:01 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:56:31 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [27/Nov/2025:18:57:01 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}

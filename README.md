@@ -136,9 +136,14 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    PARENT_BRANCH_ID=your-production-parent-branch-id
    ```
 
+2. **Run in Development**
+   ```bash
+   npm run dev:docker (bash)
+   ```
+
 2. **Deploy to production**
    ```bash
-   docker-compose -f docker-compose.prod.yaml up --build -d
+   npm run prod:docker (bash)
    ```
 
    This will:
@@ -147,15 +152,6 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    - Run database migrations
    - Start the application with resource limits
    - Run in detached mode
-
-3. **Check logs**
-   ```bash
-   docker-compose -f docker-compose.prod.yaml logs -f app
-   ```
-
-4. **Stop production environment**
-   ```bash
-   docker-compose -f docker-compose.prod.yaml down
    ```
 
 ### 💻 Non-Docker Setup (Traditional)
@@ -338,68 +334,6 @@ Both development and production environments include health checks:
 - **Timeout**: 10 seconds
 - **Retries**: 3
 - **Start Period**: 40 seconds
-
-## 🚀 Deployment Guide
-
-### Local Development Workflow
-
-1. **Start Neon Local and your app**:
-   ```bash
-   docker-compose -f docker-compose.dev.yaml up --build
-   ```
-
-2. **Make code changes** - Hot reload will automatically restart the app
-
-3. **Run database migrations** (if needed):
-   ```bash
-   docker-compose -f docker-compose.dev.yaml exec app npm run db:migrate
-   ```
-
-4. **Access Drizzle Studio**:
-   ```bash
-   docker-compose -f docker-compose.dev.yaml exec app npm run db:studio
-   ```
-
-### Production Deployment Workflow
-
-1. **Configure production environment**:
-   - Update `.env.production` with real Neon Cloud URL
-   - Set strong JWT and cookie secrets
-   - Configure CORS for your domain
-
-2. **Build and deploy**:
-   ```bash
-   docker-compose -f docker-compose.prod.yaml up --build -d
-   ```
-
-3. **Verify deployment**:
-   ```bash
-   curl http://localhost:3000/health
-   ```
-
-4. **Monitor logs**:
-   ```bash
-   docker-compose -f docker-compose.prod.yaml logs -f app
-   ```
-
-### Cloud Deployment (AWS, Azure, GCP)
-
-1. **Build the production image**:
-   ```bash
-   docker build --target production -t production-api:latest .
-   ```
-
-2. **Tag and push to container registry**:
-   ```bash
-   docker tag production-api:latest your-registry/production-api:latest
-   docker push your-registry/production-api:latest
-   ```
-
-3. **Deploy with environment variables**:
-   - Set `DATABASE_URL` to your Neon Cloud URL
-   - Set `NODE_ENV=production`
-   - Set secure `JWT_SECRET` and `COOKIE_SECRET`
-   - Configure `CORS_ORIGIN` for your domain
 
 ## 🧪 Development
 
