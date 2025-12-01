@@ -106,3 +106,37 @@
 {"level":"info","message":"::1 - - [27/Nov/2025:18:56:01 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
 {"level":"info","message":"::1 - - [27/Nov/2025:18:56:31 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
 {"level":"info","message":"::1 - - [27/Nov/2025:18:57:01 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:22:59 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"User adrian@gmail.com created successfully","service":"production-api"}
+{"level":"info","message":"User registered successfully: adrian@gmail.com","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:23:06 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 115 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"Fetching all users","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:23:25 +0000] \"GET /api/users HTTP/1.1\" 200 497 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:23:31 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:24:04 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:24:37 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:27:28 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"Fetching all users","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:27:31 +0000] \"GET /api/users HTTP/1.1\" 200 351 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"Fetching all users","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:27:42 +0000] \"GET /api/users HTTP/1.1\" 200 351 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:27:52 +0000] \"GET /api/auth/sign-up HTTP/1.1\" 404 155 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"User adrian@gmail.com created successfully","service":"production-api"}
+{"level":"info","message":"User registered successfully: adrian@gmail.com","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:27:57 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 115 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:28:01 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"Fetching all users","service":"production-api"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [01/Dec/2025:17:28:17 +0000] \"GET /api/users HTTP/1.1\" 200 497 \"-\" \"PostmanRuntime/7.39.1\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:28:34 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:29:06 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:29:39 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:30:11 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:30:44 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:31:16 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:31:49 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:32:22 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:32:54 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:33:27 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:33:58 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:34:31 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}
+{"level":"info","message":"::1 - - [01/Dec/2025:17:35:05 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"-\"","service":"production-api"}

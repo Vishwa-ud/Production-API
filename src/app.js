@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoutes from '#routes/auth.routes.js';
+import usersRoutes from '#routes/users.routes.js';
 import securityMiddleware from '#middleware/security.middleware.js';
 
 
@@ -37,5 +38,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);//api/auth/sign-in
+
+app.use('/api/users', usersRoutes);//api/users
 
 export default app;
