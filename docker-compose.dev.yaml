@@ -6,17 +6,17 @@ services:
     image: neondatabase/neon_local:latest
     container_name: production-api-neon-local
     ports:
-      - "5432:5432"
+      - '5432:5432'
     env_file:
       - .env.development
     volumes:
-    # Persist branch metadata per git branch (optional)
+      # Persist branch metadata per git branch (optional)
       - ./.neon_local/:/tmp/.neon_local
       - ./.git/HEAD:/tmp/.git/HEAD:ro,consistent
     networks:
       - app-network
     healthcheck:
-      test: ["CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "user"]
+      test: ['CMD', 'pg_isready', '-h', 'localhost', '-p', '5432', '-U', 'user']
       interval: 5s
       timeout: 3s
       retries: 5
@@ -33,7 +33,7 @@ services:
     env_file:
       - .env.development
     ports:
-      - "${PORT:-3000}:3000"
+      - '${PORT:-3000}:3000'
     volumes:
       - .:/app
       - /app/node_modules

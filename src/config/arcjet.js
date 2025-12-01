@@ -22,7 +22,7 @@ const aj = arcjet({
     slidingWindow({
       mode: 'LIVE', // Enforce the rate limit. Use "DRY_RUN" to log only
       interval: '2s',
-      max: 5
+      max: 5,
     }),
   ],
 });

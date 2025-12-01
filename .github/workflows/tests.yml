@@ -60,7 +60,7 @@ jobs:
           script: |
             const fs = require('fs');
             let coverageComment = '## 📊 Test Coverage\n\n';
-            
+
             try {
               const coverageData = JSON.parse(fs.readFileSync('coverage/coverage-final.json', 'utf8'));
               coverageComment += '✅ Coverage report generated. Check the artifacts for detailed results.\n\n';

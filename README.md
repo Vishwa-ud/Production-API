@@ -72,21 +72,22 @@ Production-API/
 Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral branching capabilities.
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Vishwa-ud/Production-API.git
    cd Production-API
    ```
 
 2. **Configure environment for development**
-   
+
    The `.env.development` file is already configured for Neon Local. Update the following values:
-   
+
    ```env
    # Neon Local Configuration
    NEON_API_KEY=napi_v7ss391f3vhi9m2lrq3i6cuikxs3qt4gz0dyjrryowsjk8iy5irg1fx29h36c2zm
    NEON_PROJECT_ID=your-project-id-here
    PARENT_BRANCH_ID=your-parent-branch-id-here
-   
+
    # Other configurations
    JWT_SECRET=your-dev-jwt-secret
    COOKIE_SECRET=your-dev-cookie-secret
@@ -94,6 +95,7 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    ```
 
 3. **Start the development environment**
+
    ```bash
    docker-compose -f docker-compose.dev.yaml up --build
    ```
@@ -116,20 +118,20 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
 #### Production Environment with Neon Cloud
 
 1. **Configure environment for production**
-   
+
    Update `.env.production` with your Neon Cloud credentials:
-   
+
    ```env
    # Database Configuration (Neon Cloud)
    DATABASE_URL=postgres://user:password@your-project.neon.tech/neondb?sslmode=require
-   
+
    # Security - Use strong secrets!
    JWT_SECRET=CHANGE_THIS_TO_A_STRONG_SECRET
    COOKIE_SECRET=CHANGE_THIS_TO_A_STRONG_COOKIE_SECRET
-   
+
    # CORS - Your production domain
    CORS_ORIGIN=https://your-production-domain.com
-   
+
    # Neon Configuration
    NEON_API_KEY=napi_v7ss391f3vhi9m2lrq3i6cuikxs3qt4gz0dyjrryowsjk8iy5irg1fx29h36c2zm
    NEON_PROJECT_ID=your-production-project-id
@@ -137,11 +139,13 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    ```
 
 2. **Run in Development**
+
    ```bash
    npm run dev:docker (bash)
    ```
 
-2. **Deploy to production**
+3. **Deploy to production**
+
    ```bash
    npm run prod:docker (bash)
    ```
@@ -152,27 +156,34 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    - Run database migrations
    - Start the application with resource limits
    - Run in detached mode
+
+   ```
+
    ```
 
 ### 💻 Non-Docker Setup (Traditional)
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Vishwa-ud/Production-API.git
    cd Production-API
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Configure environment variables**
+
    ```bash
    cp .env.example .env
    ```
-   
+
    Edit `.env` and add your configuration:
+
    ```env
    PORT=3000
    NODE_ENV=development
@@ -180,11 +191,13 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    ```
 
 4. **Generate database schema**
+
    ```bash
    npm run db:generate
    ```
 
 5. **Run migrations**
+
    ```bash
    npm run db:migrate
    ```
@@ -198,37 +211,38 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
 
 ### Docker Commands
 
-| Command | Description |
-|---------|-------------|
-| `docker-compose -f docker-compose.dev.yaml up --build` | Start development environment with Neon Local |
-| `docker-compose -f docker-compose.dev.yaml down` | Stop development environment |
-| `docker-compose -f docker-compose.dev.yaml logs -f` | View development logs |
-| `docker-compose -f docker-compose.prod.yaml up --build -d` | Start production environment (detached) |
-| `docker-compose -f docker-compose.prod.yaml down` | Stop production environment |
-| `docker-compose -f docker-compose.prod.yaml logs -f app` | View production logs |
+| Command                                                    | Description                                   |
+| ---------------------------------------------------------- | --------------------------------------------- |
+| `docker-compose -f docker-compose.dev.yaml up --build`     | Start development environment with Neon Local |
+| `docker-compose -f docker-compose.dev.yaml down`           | Stop development environment                  |
+| `docker-compose -f docker-compose.dev.yaml logs -f`        | View development logs                         |
+| `docker-compose -f docker-compose.prod.yaml up --build -d` | Start production environment (detached)       |
+| `docker-compose -f docker-compose.prod.yaml down`          | Stop production environment                   |
+| `docker-compose -f docker-compose.prod.yaml logs -f app`   | View production logs                          |
 
 ### NPM Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm start` | Start production server |
-| `npm run lint` | Run ESLint to check code quality |
-| `npm run lint:fix` | Auto-fix ESLint issues |
-| `npm run format` | Format code with Prettier |
-| `npm run format:check` | Check code formatting without making changes |
-| `npm run db:generate` | Generate database migration files from schema |
-| `npm run db:migrate` | Apply pending migrations to database |
-| `npm run db:studio` | Open Drizzle Studio (database GUI) |
+| Command                | Description                                   |
+| ---------------------- | --------------------------------------------- |
+| `npm run dev`          | Start development server with hot reload      |
+| `npm start`            | Start production server                       |
+| `npm run lint`         | Run ESLint to check code quality              |
+| `npm run lint:fix`     | Auto-fix ESLint issues                        |
+| `npm run format`       | Format code with Prettier                     |
+| `npm run format:check` | Check code formatting without making changes  |
+| `npm run db:generate`  | Generate database migration files from schema |
+| `npm run db:migrate`   | Apply pending migrations to database          |
+| `npm run db:studio`    | Open Drizzle Studio (database GUI)            |
 
 ## 🗄️ Database Management
 
 ### Creating a New Schema
 
 1. Define your schema in `src/models/`:
+
    ```javascript
    import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
-   
+
    export const users = pgTable('users', {
      id: serial('id').primaryKey(),
      name: text('name').notNull(),
@@ -238,6 +252,7 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
    ```
 
 2. Generate migration:
+
    ```bash
    npm run db:generate
    ```
@@ -261,6 +276,7 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
 ## 🐳 Docker Architecture
 
 ### Development Setup
+
 ```
 ┌─────────────────────────────────────────┐
 │         Docker Compose (Dev)            │
@@ -282,6 +298,7 @@ Neon Local allows you to run a local PostgreSQL database with Neon's ephemeral b
 ```
 
 ### Production Setup
+
 ```
 ┌─────────────────────────────────────────┐
 │         Docker Compose (Prod)           │
@@ -310,6 +327,7 @@ The application automatically uses the correct database based on the environment
 - **Production (Docker)**: `DATABASE_URL=postgres://user:password@your-project.neon.tech/neondb?sslmode=require`
 
 Environment files:
+
 - `.env.development` → Used by `docker-compose.dev.yaml`
 - `.env.production` → Used by `docker-compose.prod.yaml`
 - `.env.example` → Template for manual setup
@@ -321,6 +339,7 @@ Both development and production environments include health checks:
 **Endpoint**: `GET /health`
 
 **Response**:
+
 ```json
 {
   "status": "OK",
@@ -330,6 +349,7 @@ Both development and production environments include health checks:
 ```
 
 **Docker Health Check Configuration**:
+
 - **Interval**: 30 seconds
 - **Timeout**: 10 seconds
 - **Retries**: 3
@@ -338,6 +358,7 @@ Both development and production environments include health checks:
 ## 🧪 Development
 
 The project uses:
+
 - **ESLint** for code linting
 - **Prettier** for code formatting
 - **Node.js watch mode** for automatic server restart during development
@@ -354,9 +375,10 @@ Contributions, issues, and feature requests are welcome!
 ## 👤 Author
 
 **Vishwa-ud**
+
 - GitHub: [@Vishwa-ud](https://github.com/Vishwa-ud)
 
 ## 🔗 Links
 
 - Repository: [https://github.com/Vishwa-ud/Production-API](https://github.com/Vishwa-ud/Production-API)
-- Issues: [https://github.com/Vishwa-ud/Production-API/issues](https://github.com/Vishwa-ud/Production-API/issues) 
+- Issues: [https://github.com/Vishwa-ud/Production-API/issues](https://github.com/Vishwa-ud/Production-API/issues)
