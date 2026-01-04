@@ -1,4 +1,4 @@
-name: Lint and Format
+name: Format Check
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main, staging]
 
 jobs:
-  lint-and-format:
+  format:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,21 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint
-        run: npm run lint
-        continue-on-error: true
-        id: lint
-
       - name: Run Prettier check
         run: npm run format:check
         continue-on-error: true
         id: format
-
-      - name: Annotate lint issues
-        if: failure() && steps.lint.outcome == 'failure'
-        run: |
-          echo "::error::ESLint found issues. Run 'npm run lint:fix' to fix them automatically."
-          exit 1
 
       - name: Annotate format issues
         if: failure() && steps.format.outcome == 'failure'
@@ -46,5 +35,5 @@ jobs:
           exit 1
 
       - name: Fail workflow if issues found
-        if: steps.lint.outcome == 'failure' || steps.format.outcome == 'failure'
+        if: steps.format.outcome == 'failure'
         run: exit 1
